@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="player" class="com.cesarcd.tests.clients.JavaPlayer"></bean>
+	<bean id="licPlayer" class="com.cesarcd.tests.clients.LicenseRenewalJavaPlayer"></bean>
+	<bean id="propsBean" class="com.cesarcd.tests.util.PropsUtils"></bean>
+
+	<bean id="springTester" class="com.cesarcd.tests.unit.BasicPlayerTests">
+		<property name="propsUtil">
+			<ref local="propsBean" />
+		</property>
+		<property name="licPlayer">
+			<ref local="licPlayer" />
+		</property>
+		<property name="player">
+			<ref local="player" />
+		</property>
+	</bean>
+</beans>

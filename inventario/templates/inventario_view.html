@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<script src="{{ STATIC_URL }}js-plugin/jquery-1.7.1.min.js"></script>
+		<script src="{{ STATIC_URL }}js/inventory_code.js"></script>
+		<style type="text/css">
+		.cell {
+			border: 1px solid #484848;
+		  	display: table-cell;		    
+          	padding: 3px;
+          	/*width: 150px;
+            height: 150px;*/
+		}
+		#container {
+		    display: table;
+		}
+		.row  {
+		    display: table-row;
+		}
+		#inventario_view #header {
+			color: white;	
+			background-color: #0066CC;
+		}
+		</style>
+		<title>Inventory</title>
+	</head>
+	<body id="inventario_view">
+		<h2>Inventory: {{ inv.name }}</h2>
+		{% if view != "Simple" %}
+			<p>
+			<form action="." method="GET" id="inventory_view"> 
+				<input type="submit" value="Toggle units" id="units">
+				<input type="submit" value="Toggle qty" id="qty">
+			</form>
+		</p>
+		{% endif %}
+		
+		<div id="container">
+			<div class="row" id="header">
+				{% if view != "Simple" %}
+					<span class="cell qty">Qty</span>
+					<span class="cell unit">Unit</span>
+				{% endif %}
+				<span class="cell name">Name</span>
+			</div>
+		{% for entry in entries %}
+			<div class="row">
+				{% if view != "Simple" %}
+					{% if entry.quantity %}
+						<span class="cell qty">{{ entry.quantity }}</span>
+					{% else %}
+						<span class="cell qty">&nbsp;</span>
+					{% endif %}
+					<span class="cell unit">{{ entry.item.unit }}</span>
+				{% endif %}
+				<span class="cell name">{{ entry.item.name }}</span>				
+			</div>
+		{% endfor %}
+		</div>
+	</body>
+</html>

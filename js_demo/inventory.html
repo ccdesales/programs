@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0033)http://localhost:8000/inventario/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="./js/inventory.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/inventory.css" />
+		<title>Inventory</title>
+	<script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script></head>
+	<body>
+		<h2>Inventory</h2>
+		<form action="./inventory/Inventario.html" method="POST" id="inventory">
+			<div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="3f164ca631fdbd2180c3f11f4d238238"></div>
+			
+						
+			Name: <input id="id_name" type="text" name="name" maxlength="30">
+			
+			<input type="submit" value="Use date" id="date">
+			<input type="submit" value="Load last" id="last">
+			
+			<input type="submit" value="Load AJAX" id="ajax">
+			
+			<p>
+			<input type="radio" name="ttype" value="1" id="id_ttype_1" checked="yes">Simple
+			<input type="radio" name="ttype" value="2" id="id_ttype_2">Detailed
+			</p><p>
+			</p><div id="form_canvas" class="table_container">
+				<div class="row">
+					<div class="cell">Exist</div>
+					<div class="cell">Buy</div>
+					<div class="cell">Category</div>
+				</div>
+				
+					<div class="row" id="header">
+						<div class="cell left"></div>
+						<div class="cell middle"></div>
+						<div class="cell right">Dairy</div>
+					</div>
+					
+					<div class="row" id="entry_frame_1">
+						<div class="cell">
+							<input type="checkbox" name="items" value="1" id="1">
+							<input type="checkbox" name="isexist_1" value="True" id="isexist_1">
+							<input type="text" name="qty_exist_1" id="qty_exist_1" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_1" value="True" id="isreorder_1">
+							<input type="text" name="qty_reorder_1" id="qty_reoder_1" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_1">
+								<label class="optional">(Piece)</label>
+								Butter
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_2">
+						<div class="cell">
+							<input type="checkbox" name="items" value="2" id="2">
+							<input type="checkbox" name="isexist_2" value="True" id="isexist_2">
+							<input type="text" name="qty_exist_2" id="qty_exist_2" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_2" value="True" id="isreorder_2">
+							<input type="text" name="qty_reorder_2" id="qty_reoder_2" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_2">
+								<label class="optional">(Piece)</label>
+								Cheese
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_3">
+						<div class="cell">
+							<input type="checkbox" name="items" value="3" id="3">
+							<input type="checkbox" name="isexist_3" value="True" id="isexist_3">
+							<input type="text" name="qty_exist_3" id="qty_exist_3" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_3" value="True" id="isreorder_3">
+							<input type="text" name="qty_reorder_3" id="qty_reoder_3" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_3">
+								<label class="optional">(Piece)</label>
+								Eggs
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_4">
+						<div class="cell">
+							<input type="checkbox" name="items" value="4" id="4">
+							<input type="checkbox" name="isexist_4" value="True" id="isexist_4">
+							<input type="text" name="qty_exist_4" id="qty_exist_4" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_4" value="True" id="isreorder_4">
+							<input type="text" name="qty_reorder_4" id="qty_reoder_4" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_4">
+								<label class="optional">(Piece)</label>
+								Milk
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_5">
+						<div class="cell">
+							<input type="checkbox" name="items" value="5" id="5">
+							<input type="checkbox" name="isexist_5" value="True" id="isexist_5">
+							<input type="text" name="qty_exist_5" id="qty_exist_5" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_5" value="True" id="isreorder_5">
+							<input type="text" name="qty_reorder_5" id="qty_reoder_5" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_5">
+								<label class="optional">(Piece)</label>
+								Yogurt
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_10">
+						<div class="cell">
+							<input type="checkbox" name="items" value="10" id="10">
+							<input type="checkbox" name="isexist_10" value="True" id="isexist_10">
+							<input type="text" name="qty_exist_10" id="qty_exist_10" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_10" value="True" id="isreorder_10">
+							<input type="text" name="qty_reorder_10" id="qty_reoder_10" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_10">
+								<label class="optional">(Piece)</label>
+								Oranges
+							</span>
+						</div>
+					</div>
+					
+				
+					<div class="row" id="header">
+						<div class="cell left"></div>
+						<div class="cell middle"></div>
+						<div class="cell right">Fruit</div>
+					</div>
+					
+					<div class="row" id="entry_frame_6">
+						<div class="cell">
+							<input type="checkbox" name="items" value="6" id="6">
+							<input type="checkbox" name="isexist_6" value="True" id="isexist_6">
+							<input type="text" name="qty_exist_6" id="qty_exist_6" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_6" value="True" id="isreorder_6">
+							<input type="text" name="qty_reorder_6" id="qty_reoder_6" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_6">
+								<label class="optional">(Piece)</label>
+								Apples
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_7">
+						<div class="cell">
+							<input type="checkbox" name="items" value="7" id="7">
+							<input type="checkbox" name="isexist_7" value="True" id="isexist_7">
+							<input type="text" name="qty_exist_7" id="qty_exist_7" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_7" value="True" id="isreorder_7">
+							<input type="text" name="qty_reorder_7" id="qty_reoder_7" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_7">
+								<label class="optional">(Piece)</label>
+								Bananas
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_8">
+						<div class="cell">
+							<input type="checkbox" name="items" value="8" id="8">
+							<input type="checkbox" name="isexist_8" value="True" id="isexist_8">
+							<input type="text" name="qty_exist_8" id="qty_exist_8" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_8" value="True" id="isreorder_8">
+							<input type="text" name="qty_reorder_8" id="qty_reoder_8" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_8">
+								<label class="optional">(Piece)</label>
+								Blueberries
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_9">
+						<div class="cell">
+							<input type="checkbox" name="items" value="9" id="9">
+							<input type="checkbox" name="isexist_9" value="True" id="isexist_9">
+							<input type="text" name="qty_exist_9" id="qty_exist_9" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_9" value="True" id="isreorder_9">
+							<input type="text" name="qty_reorder_9" id="qty_reoder_9" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_9">
+								<label class="optional">(Piece)</label>
+								Melon
+							</span>
+						</div>
+					</div>
+					
+				
+					<div class="row" id="header">
+						<div class="cell left"></div>
+						<div class="cell middle"></div>
+						<div class="cell right">Dry Goods</div>
+					</div>
+					
+					<div class="row" id="entry_frame_11">
+						<div class="cell">
+							<input type="checkbox" name="items" value="11" id="11">
+							<input type="checkbox" name="isexist_11" value="True" id="isexist_11">
+							<input type="text" name="qty_exist_11" id="qty_exist_11" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_11" value="True" id="isreorder_11">
+							<input type="text" name="qty_reorder_11" id="qty_reoder_11" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_11">
+								<label class="optional">(Piece)</label>
+								Pasta
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_12">
+						<div class="cell">
+							<input type="checkbox" name="items" value="12" id="12">
+							<input type="checkbox" name="isexist_12" value="True" id="isexist_12">
+							<input type="text" name="qty_exist_12" id="qty_exist_12" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_12" value="True" id="isreorder_12">
+							<input type="text" name="qty_reorder_12" id="qty_reoder_12" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_12">
+								<label class="optional">(Piece)</label>
+								Rice
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_13">
+						<div class="cell">
+							<input type="checkbox" name="items" value="13" id="13">
+							<input type="checkbox" name="isexist_13" value="True" id="isexist_13">
+							<input type="text" name="qty_exist_13" id="qty_exist_13" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_13" value="True" id="isreorder_13">
+							<input type="text" name="qty_reorder_13" id="qty_reoder_13" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_13">
+								<label class="optional">(Piece)</label>
+								Bread Crumbs
+							</span>
+						</div>
+					</div>
+					
+				
+					<div class="row" id="header">
+						<div class="cell left"></div>
+						<div class="cell middle"></div>
+						<div class="cell right">Laundry</div>
+					</div>
+					
+					<div class="row" id="entry_frame_14">
+						<div class="cell">
+							<input type="checkbox" name="items" value="14" id="14">
+							<input type="checkbox" name="isexist_14" value="True" id="isexist_14">
+							<input type="text" name="qty_exist_14" id="qty_exist_14" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_14" value="True" id="isreorder_14">
+							<input type="text" name="qty_reorder_14" id="qty_reoder_14" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_14">
+								<label class="optional">(Bag)</label>
+								Bleach
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_15">
+						<div class="cell">
+							<input type="checkbox" name="items" value="15" id="15">
+							<input type="checkbox" name="isexist_15" value="True" id="isexist_15">
+							<input type="text" name="qty_exist_15" id="qty_exist_15" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_15" value="True" id="isreorder_15">
+							<input type="text" name="qty_reorder_15" id="qty_reoder_15" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_15">
+								<label class="optional">(Bag)</label>
+								Detergent
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_16">
+						<div class="cell">
+							<input type="checkbox" name="items" value="16" id="16">
+							<input type="checkbox" name="isexist_16" value="True" id="isexist_16">
+							<input type="text" name="qty_exist_16" id="qty_exist_16" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_16" value="True" id="isreorder_16">
+							<input type="text" name="qty_reorder_16" id="qty_reoder_16" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_16">
+								<label class="optional">(Piece)</label>
+								Fabric Softener
+							</span>
+						</div>
+					</div>
+					
+				
+					<div class="row" id="header">
+						<div class="cell left"></div>
+						<div class="cell middle"></div>
+						<div class="cell right">Vegetables</div>
+					</div>
+					
+					<div class="row" id="entry_frame_17">
+						<div class="cell">
+							<input type="checkbox" name="items" value="17" id="17">
+							<input type="checkbox" name="isexist_17" value="True" id="isexist_17">
+							<input type="text" name="qty_exist_17" id="qty_exist_17" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_17" value="True" id="isreorder_17">
+							<input type="text" name="qty_reorder_17" id="qty_reoder_17" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_17">
+								<label class="optional">(Piece)</label>
+								Artichokes
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_18">
+						<div class="cell">
+							<input type="checkbox" name="items" value="18" id="18">
+							<input type="checkbox" name="isexist_18" value="True" id="isexist_18">
+							<input type="text" name="qty_exist_18" id="qty_exist_18" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_18" value="True" id="isreorder_18">
+							<input type="text" name="qty_reorder_18" id="qty_reoder_18" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_18">
+								<label class="optional">(Piece)</label>
+								Broccoli
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_19">
+						<div class="cell">
+							<input type="checkbox" name="items" value="19" id="19">
+							<input type="checkbox" name="isexist_19" value="True" id="isexist_19">
+							<input type="text" name="qty_exist_19" id="qty_exist_19" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_19" value="True" id="isreorder_19">
+							<input type="text" name="qty_reorder_19" id="qty_reoder_19" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_19">
+								<label class="optional">(Piece)</label>
+								Cabbage
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_20">
+						<div class="cell">
+							<input type="checkbox" name="items" value="20" id="20">
+							<input type="checkbox" name="isexist_20" value="True" id="isexist_20">
+							<input type="text" name="qty_exist_20" id="qty_exist_20" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_20" value="True" id="isreorder_20">
+							<input type="text" name="qty_reorder_20" id="qty_reoder_20" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_20">
+								<label class="optional">(Piece)</label>
+								Celery
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_21">
+						<div class="cell">
+							<input type="checkbox" name="items" value="21" id="21">
+							<input type="checkbox" name="isexist_21" value="True" id="isexist_21">
+							<input type="text" name="qty_exist_21" id="qty_exist_21" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_21" value="True" id="isreorder_21">
+							<input type="text" name="qty_reorder_21" id="qty_reoder_21" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_21">
+								<label class="optional">(Piece)</label>
+								Cucumbers
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_22">
+						<div class="cell">
+							<input type="checkbox" name="items" value="22" id="22">
+							<input type="checkbox" name="isexist_22" value="True" id="isexist_22">
+							<input type="text" name="qty_exist_22" id="qty_exist_22" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_22" value="True" id="isreorder_22">
+							<input type="text" name="qty_reorder_22" id="qty_reoder_22" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_22">
+								<label class="optional">(Piece)</label>
+								Garlic
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_23">
+						<div class="cell">
+							<input type="checkbox" name="items" value="23" id="23">
+							<input type="checkbox" name="isexist_23" value="True" id="isexist_23">
+							<input type="text" name="qty_exist_23" id="qty_exist_23" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_23" value="True" id="isreorder_23">
+							<input type="text" name="qty_reorder_23" id="qty_reoder_23" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_23">
+								<label class="optional">(Piece)</label>
+								Lettuce
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_24">
+						<div class="cell">
+							<input type="checkbox" name="items" value="24" id="24">
+							<input type="checkbox" name="isexist_24" value="True" id="isexist_24">
+							<input type="text" name="qty_exist_24" id="qty_exist_24" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_24" value="True" id="isreorder_24">
+							<input type="text" name="qty_reorder_24" id="qty_reoder_24" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_24">
+								<label class="optional">(Piece)</label>
+								Potatoes
+							</span>
+						</div>
+					</div>
+					
+					<div class="row" id="entry_frame_25">
+						<div class="cell">
+							<input type="checkbox" name="items" value="25" id="25">
+							<input type="checkbox" name="isexist_25" value="True" id="isexist_25">
+							<input type="text" name="qty_exist_25" id="qty_exist_25" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_25" value="True" id="isreorder_25">
+							<input type="text" name="qty_reorder_25" id="qty_reoder_25" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_25">
+								<label class="optional">(Piece)</label>
+								Onions
+							</span>
+						</div>
+					</div>
+					
+				
+			</div>
+			<p>
+				<input type="reset" value="Reset!">
+				<input type="submit" value="Submit">
+				<input type="submit" name="SubmitTpl" value="Save as Template">
+			</p>
+		</form>
+		<div id="result">
+			Area
+		</div>
+	
+</body></html>

@@ -1,0 +1,1 @@
+sqlite3 db.db3 < prepopulate.sql

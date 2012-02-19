@@ -1,0 +1,6 @@
+syntax: regexp
+.metadata/*
+syntax: glob
+*.class
+syntax: glob
+*.pyc

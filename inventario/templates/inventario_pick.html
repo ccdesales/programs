@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<script src="{{ STATIC_URL }}js-plugin/jquery-1.7.1.min.js"></script>
+		<script src="{{ STATIC_URL }}js/inventory_code.js"></script>
+		<style type="text/css">
+		div {
+			display: inline;
+		}
+		</style>
+		<title>Inventory</title>
+	</head>
+	<body>
+		<h1>View Inventory</h1>
+		<ul>
+		{% for inv in invs %}
+			<li>			
+				<a href="/inventario/view/{{ inv.id }}">{{ inv.name }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>

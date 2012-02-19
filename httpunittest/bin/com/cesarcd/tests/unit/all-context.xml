@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="propsBean" class="com.cesarcd.tests.util.PropsUtils"></bean>
+	
+	<bean id="otherTester" class="com.cesarcd.tests.unit.OtherPlayerTests">
+		<property name="propsUtil">
+			<ref local="propsBean" />
+		</property>
+	</bean>
+	
+	<bean id="wapTester" class="com.cesarcd.tests.unit.WAPTests">
+		<property name="propsUtil">
+			<ref local="propsBean" />
+		</property>
+	</bean>
+
+</beans>

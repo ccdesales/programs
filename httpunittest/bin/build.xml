@@ -1,0 +1,51 @@
+<project>
+	<property name="src" value="../src" />
+	<property name="lib" value="../lib" />
+	<property name="classes" value="../bin" />
+	<property name="test.dir" value="${classes}" />
+	<property name="libs.base" value="C:/javalibs" />
+	<property name="httpunit" value="${libs.base}/httpunit-1.7" />
+	<property name="httpunit.ext" value="${httpunit}/jars" />
+	<property name="httpunit.base" value="${httpunit}/lib" />
+	<property name="spring.base" value="${libs.base}/spring-fmw-3.1.0" />
+	<property name="spring.ext" value="${spring.base}/my_external_libs/lib" />
+	<property name="spring" value="${spring.base}/spring-framework-3.1.0.RC1/dist" />
+	<property name="test.class.name" value="com.pv.tests.unit.BasicPlayerTests" />
+
+	<path id="test.classpath">
+		<pathelement location="${classes}" />
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${spring}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${spring.ext}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${httpunit.base}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${httpunit.ext}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="all-tests">
+		<junit fork="yes" haltonfailure="yes">
+			<formatter type="plain" usefile="false" />
+			<classpath refid="test.classpath" />
+			<batchtest fork="yes">
+				<fileset dir="${test.dir}" includes="**/*Tests.class" />
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="single-test">
+		<junit fork="yes" haltonfailure="yes">
+			<test name="${test.class.name}" />
+			<formatter type="plain" usefile="false" />
+			<classpath refid="test.classpath" />
+		</junit>
+	</target>
+</project>
