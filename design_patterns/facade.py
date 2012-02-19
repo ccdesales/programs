@@ -16,7 +16,8 @@ class PopenFacade:
         print '=' * 80
         print ferr.read()
 
-pop = PopenFacade()
+if __name__ == '__main__':
+        pop = PopenFacade()
 
-cmd = r'java -cp C:\jars\xslt_intercall xalanjava ./55.xml	./text_template.xsl ./out55.txt'
-pop.execute(cmd)
+        cmd = r'java -cp C:\jars\xslt_intercall xalanjava ./55.xml	./text_template.xsl ./out55.txt'
+        pop.execute(cmd)

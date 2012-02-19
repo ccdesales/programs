@@ -19,9 +19,10 @@ class Client:
     def sendReq(self, value):
         return self.proxy.sendRequest(value)
         
-cli = Client()
-print cli.sendReq(25)
+if __name__ == '__main__': 
+        cli = Client()
+        print cli.sendReq(25)
 
-#>python -u "proxy.py"
-#echo -> 625
-#>Exit code: 0
+        #>python -u "proxy.py"
+        #echo -> 625
+        #>Exit code: 0

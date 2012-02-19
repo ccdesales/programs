@@ -37,10 +37,11 @@ class Subject(Observable):
                 evt.text = 'Can divide by 7'
                 self.notify(evt)
 
-ob1 = Observer('OBS1')
-ob2 = Observer('OBS2')
+if __name__ == '__main__': 
+        ob1 = Observer('OBS1')
+        ob2 = Observer('OBS2')
 
-subj = Subject()
-subj.attach(ob1)
-subj.attach(ob2)
-subj.run()
+        subj = Subject()
+        subj.attach(ob1)
+        subj.attach(ob2)
+        subj.run()

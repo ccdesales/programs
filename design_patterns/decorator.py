@@ -10,11 +10,11 @@ class Shouter:
     def write(self, s):
         return s + '!'
         
-        
-wr = Writer()
-up = Upper()
-sh = Shouter()
+if __name__ == '__main__':
+        wr = Writer()
+        up = Upper()
+        sh = Shouter()
 
-ss='Hola mundo'
-print wr.write(up.write(sh.write(ss)))
-print wr.write(sh.write(ss))
+        ss='Hola mundo'
+        print wr.write(up.write(sh.write(ss)))
+        print wr.write(sh.write(ss))

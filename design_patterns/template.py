@@ -49,13 +49,13 @@ def testPickle():
     db = shelve.open('person.dump', 'r')
     print db['pp']
 
+if __name__ == '__main__': 
+        ps = PickleSave()
+        ps.run()
+        testPickle()
 
-ps = PickleSave()
-ps.run()
-testPickle()
-
-psql = SQLSave()
-psql.run()
+        psql = SQLSave()
+        psql.run()
 
 
 

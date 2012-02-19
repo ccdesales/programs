@@ -6,8 +6,9 @@ class MathAdapter:
         for ii in alist:
             res.append(math.sqrt(ii))
         return res
-        
-ma = MathAdapter()
-print ma.sqrt([25, 16, 4])
+
+if __name__ == '__main__': 
+        ma = MathAdapter()
+        print ma.sqrt([25, 16, 4])
             
     

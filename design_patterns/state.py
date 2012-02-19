@@ -34,6 +34,7 @@ class Context:
                 self.state = Listening()
                 
             self.state.doAction()
-            
-ctx = Context()
-ctx.run()
+
+if __name__ == '__main__': 
+        ctx = Context()
+        ctx.run()

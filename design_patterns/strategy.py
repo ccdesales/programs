@@ -31,47 +31,48 @@ class SynchStrategy(Strategy):
         time.sleep(5)
         print 'Done.'
 
-syn = SynchStrategy()
-for ii in range(5):
-    text = '%d - %s' % (ii, 'A' * 10)
-    syn.sendSMS('12345678', text)
-    
-    
-#Asynch
-#>python -u "strategy.py"
-#connecting...
-#Sending to 12345678 text: 0 - AAAAAAAAAA
-#connecting...
-#Sending to 12345678 text: 1 - AAAAAAAAAA
-#connecting...
-#Sending to 12345678 text: 2 - AAAAAAAAAA
-#connecting...
-#Sending to 12345678 text: 3 - AAAAAAAAAA
-#connecting...
-#Sending to 12345678 text: 4 - AAAAAAAAAA
-#Done.
-#Done.
-#Done.
-#Done.
-#Done.
-#>Exit code: 0
+if __name__ == '__main__': 
+        syn = SynchStrategy()
+        for ii in range(5):
+            text = '%d - %s' % (ii, 'A' * 10)
+            syn.sendSMS('12345678', text)
+            
+            
+        #Asynch
+        #>python -u "strategy.py"
+        #connecting...
+        #Sending to 12345678 text: 0 - AAAAAAAAAA
+        #connecting...
+        #Sending to 12345678 text: 1 - AAAAAAAAAA
+        #connecting...
+        #Sending to 12345678 text: 2 - AAAAAAAAAA
+        #connecting...
+        #Sending to 12345678 text: 3 - AAAAAAAAAA
+        #connecting...
+        #Sending to 12345678 text: 4 - AAAAAAAAAA
+        #Done.
+        #Done.
+        #Done.
+        #Done.
+        #Done.
+        #>Exit code: 0
 
 
-#Synch
-#>python -u "strategy.py"
-#connecting...
-#Sending to 12345678 text: 0 - AAAAAAAAAA
-#Done.
-#connecting...
-#Sending to 12345678 text: 1 - AAAAAAAAAA
-#Done.
-#connecting...
-#Sending to 12345678 text: 2 - AAAAAAAAAA
-#Done.
-#connecting...
-#Sending to 12345678 text: 3 - AAAAAAAAAA
-#Done.
-#connecting...
-#Sending to 12345678 text: 4 - AAAAAAAAAA
-#Done.
-#>Exit code: 0
+        #Synch
+        #>python -u "strategy.py"
+        #connecting...
+        #Sending to 12345678 text: 0 - AAAAAAAAAA
+        #Done.
+        #connecting...
+        #Sending to 12345678 text: 1 - AAAAAAAAAA
+        #Done.
+        #connecting...
+        #Sending to 12345678 text: 2 - AAAAAAAAAA
+        #Done.
+        #connecting...
+        #Sending to 12345678 text: 3 - AAAAAAAAAA
+        #Done.
+        #connecting...
+        #Sending to 12345678 text: 4 - AAAAAAAAAA
+        #Done.
+        #>Exit code: 0

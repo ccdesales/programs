@@ -20,16 +20,18 @@ class ConcatTreeVisitor:
             return 0        
         return str(self.total(tree.left)) + str(self.total(tree.right)) + str(tree.accept())
 
+if __name__ == '__main__':
+        tree = VisitableTree(1, VisitableTree(2), VisitableTree(3)) 
 
-tree = VisitableTree(1, VisitableTree(2), VisitableTree(3)) 
+        vis = SumTreeVisitor()
+        print vis.total(tree)
 
-vis = SumTreeVisitor()
-print vis.total(tree)
+        vis = ConcatTreeVisitor()
+        print vis.total(tree)
 
-vis = ConcatTreeVisitor()
-print vis.total(tree)
+        #>python -u "visitor.py"
+        #12
+        #0040062
+        #>Exit code: 0
 
-#>python -u "visitor.py"
-#12
-#0040062
-#>Exit code: 0
+                

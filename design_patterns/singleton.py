@@ -13,7 +13,7 @@ class Singleton:
             self.inst = self.Repeater()
             return self.inst
             
-            
-#rep = Repeater() #NameError: name 'Repeater' is not defined
-rep = Singleton().createRepeater()
-rep.repeat('abc')
+if __name__ == '__main__': 
+        #rep = Repeater() #NameError: name 'Repeater' is not defined
+        rep = Singleton().createRepeater()
+        rep.repeat('abc')

@@ -26,6 +26,7 @@ class CuttingMachine(CommandProcessor):
         for cmd in cmdList:
             cmd.execute()            
             
-cmds = [RightCommand(), RightCommand(), DownCommand(), LeftCommand(), LeftCommand(), UpCommand()]
-machine = CuttingMachine()
-machine.run(cmds)
+if __name__ == '__main__':
+        cmds = [RightCommand(), RightCommand(), DownCommand(), LeftCommand(), LeftCommand(), UpCommand()]
+        machine = CuttingMachine()
+        machine.run(cmds)

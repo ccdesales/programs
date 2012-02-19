@@ -14,7 +14,6 @@ class WindowBuilder:
         w.pack()
         root.mainloop()
         
-        
-        
-bb = WindowBuilder('./props.properties') 
-bb.build()
+if __name__ == '__main__':                
+        bb = WindowBuilder('./props.properties') 
+        bb.build()

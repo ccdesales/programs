@@ -49,25 +49,25 @@ class ErrorHandler(Handler):
         if 'error' in evt:
             print 'ERROR, send SMS', evt
        
-                
-ee = ErrorHandler()
-ww = WarningHandler(ee)
-ii = InfoHandler(ww)
-dd = DebugHandler(ii)
+if __name__ == '__main__':
+        ee = ErrorHandler()
+        ww = WarningHandler(ee)
+        ii = InfoHandler(ww)
+        dd = DebugHandler(ii)
 
-gg = Generator()
-gg.handler = dd
-gg.run()
+        gg = Generator()
+        gg.handler = dd
+        gg.run()
 
-#>python -u "chor.py"
-#DEBUG, write to log debug0
-#DEBUG, write to log error1
-#ERROR, send SMS error1
-#DEBUG, write to log warning2
-#WARNING, send email warning2
-#DEBUG, write to log info3
-#INFO, play beep info3
-#DEBUG, write to log warning4
-#WARNING, send email warning4
-#>Exit code: 0
+        #>python -u "chor.py"
+        #DEBUG, write to log debug0
+        #DEBUG, write to log error1
+        #ERROR, send SMS error1
+        #DEBUG, write to log warning2
+        #WARNING, send email warning2
+        #DEBUG, write to log info3
+        #INFO, play beep info3
+        #DEBUG, write to log warning4
+        #WARNING, send email warning4
+        #>Exit code: 0
 
