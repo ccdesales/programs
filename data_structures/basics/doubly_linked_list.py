@@ -1,13 +1,6 @@
 '''
 Created on 09.01.2012
 
-Module that contains the implementation of a
-Doubly Linked List. Notice: Regular python lists 
-or tuples were not used for this program as the 
-intend was to provide the clasical implementation
-that does not rely on the availability of such a
-powerful built-in data structure
-
 @author: desales
 '''
 
@@ -26,6 +19,9 @@ class DoublyLinkedList:
     head = None
     tail = None
     
+    #---------------------------------
+    # Insert operations 
+    #---------------------------------
     def _insertFirst(self, cargo):
         """Insert first element of the list.
         Same procedure for inserting at the end 

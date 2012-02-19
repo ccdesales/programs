@@ -1,15 +1,8 @@
-"""
-Module to test via Nose the usage
-of the Tree data type
-and related methods to traverse and
-process nodes.
-"""
-
 import nose
 from nose.tools import ok_, eq_, nottest
 from ds.graphs.bin_tree import (
     find,
-    build,
+    build_btree,
     in_order,
     min_depth,
     max_depth,
@@ -39,7 +32,7 @@ def test_inorder():
         ["D", 'B', 'F'],
     )    
     
-    tree = build(graph)
+    tree = build_btree(graph)
     in_order(tree, callback=do_store)
     
     eq_(elems, ['A', 'B', 'C', 'D', 'E', 'F', 'G'])
@@ -57,7 +50,7 @@ def test_preorder():
         ["D", 'B', 'F'],
     )    
     
-    tree = build(graph)
+    tree = build_btree(graph)
     pre_order(tree, callback=do_store)
     
     eq_(elems, ['D', 'B', 'A', 'C', 'F', 'E', 'G'])
@@ -75,7 +68,7 @@ def test_post_order():
         ["D", 'B', 'F'],
     )    
     
-    tree = build(graph)
+    tree = build_btree(graph)
     post_order(tree, callback=do_store)
     
     eq_(elems, ['A', 'C', 'B', 'E', 'G', 'F', 'D'])
@@ -95,7 +88,7 @@ def test_non_balanced():
         [1, 2, 4],
     )    
     
-    tree = build(graph)
+    tree = build_btree(graph)
     
     elems = []
     pre_order(tree, callback=do_store)
@@ -124,7 +117,7 @@ def test_find():
         [8,3,10],
     )    
  
-    tree = build(graph)
+    tree = build_btree(graph)
     eq_(None, find(None, tree))
     eq_(8, find(8, tree))
     eq_(7, find(7, tree))
@@ -308,7 +301,10 @@ def test_select_range_path2():
     }
     root = 1
     
-    from ds.graphs.bin_tree import breadth_first_search_filter, range_filter
+    from ds.graphs.bin_tree import (
+        breadth_first_search_filter, 
+        range_filter,
+    )
     
     kwargs = dict(
          lower = 6,
@@ -317,6 +313,35 @@ def test_select_range_path2():
     
     eq_([8,11,9,10,12,13,6,7], breadth_first_search_filter(root, range_filter, kwargs, graph))
 
+def test_list2BST():
+    from ds.graphs.bin_tree import (
+        breadth_first_search_tree,
+        list2BST
+    )
+    
+    ll = [1,3,4,2]
+    tree = list2BST(ll)
+    eq_([1,3,2,4], breadth_first_search_tree(tree))
+    
+    ll = [10,5,15,3,7,13,16,1,4,6,8]
+    tree = list2BST(ll)
+    eq_([10,5,15,3,7,13,16,1,4,6,8], breadth_first_search_tree(tree))
+
+def test_is_line():    
+    from ds.graphs.bin_tree import (
+        is_line, 
+        build_tree,
+    )
+    
+    graph = (
+        (4,),
+        (3, 4),
+        (2, 3),
+        (1, 2),
+    )    
+    
+    tree = build_tree(graph)
+    ok_(is_line(tree))
         
 def run():    
     nose.run()

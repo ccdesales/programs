@@ -1,11 +1,5 @@
 '''
 Created on 09.01.2012
-Module that contains the implementation of a
-Linked List. Notice: Regular python lists 
-or tuples were not used for this program as the 
-intend was to provide the clasical implementation
-that does not rely on the availability of such a
-powerful built-in data structure
 
 @author: desales
 '''
@@ -78,6 +72,7 @@ class LinkedList:
             node = None
             #NOTE: This problem can not be solved if the node to be deleted 
             #is the last node in the linked list. 
+        
         
     def remove(self, cargo):
         if not self.firstNode:
