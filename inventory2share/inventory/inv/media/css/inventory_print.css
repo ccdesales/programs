@@ -1,0 +1,11 @@
+body 
+{ font-size: .75em; 
+}
+
+.cell {
+	padding: 2px;
+}
+
+#inventory_view {
+	display: None;
+}

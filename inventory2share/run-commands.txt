@@ -1,0 +1,85 @@
+
+http://cesarcd.alwaysdata.net/.
+
+
+You can immediatly:
+
+connect to your administration panel with your email address: myspam911-trash@yahoo.com.mx ;
+connect FTP at ftp.alwaysdata.com with login: cesarcd ;
+connect SSH at ssh.alwaysdata.com with login: cesarcd (you must first activate your account in the administration panel) ;
+visit your homepage at: http://cesarcd.alwaysdata.net/.
+
+
+
+https://admin.alwaysdata.com/domain/
+https://admin.alwaysdata.com/admin/account/
+
+ssh cesarcd@ssh.alwaysdata.com
+ftp.alwaysdata.com
+
+
+Replaced  /www/  with /inventario/public/
+
+tail -n 50 ~/admin/log/error.log
+
+________________________________
+
+sudo /etc/init.d/nginx restart
+
+
+2012/01/30 23:50:51 [error] 25353#0: *14 open() "/home/cesar/htdocs/cesar_static/index.html" failed (13: Permission denied), client: 178.83.248.83, server: mamba.pv.com, request: "GET /cesar_static/index.html HTTP/1.1", host: "mamba.pv.com"
+
+XXX 2012/01/30 23:49:16 [error] 25353#0: *14 open() "/home/cesar/htdocs/cesar_static/index.html" failed (13: Permission denied), client: 178.83.248.83, server: mamba.pv.com, request: "GET /cesar_static/index.html HTTP/1.1", host: "mamba.pv.com"
+
+
+________________________________
+
+
+python manage.py runserver mamba.pv.com:8181
+
+
+/home/cesar/django/inventario/inventory
+
+/home/cesar/my_libs/django-trunk
+
+192.168.0.101:8181/inv/
+192.168.0.255:8181/inv/
+
+
+
+
+python manage.py runfcgi host=127.0.0.1 port=8080 --settings=settings
+desales-desktop nginx # /usr/sbin/nginx
+
+http://192.168.0.101/inv/
+
+
+
+
+__________________________________
+
+ ps aux | grep nginx
+ 
+
+Mamba
+['', '/usr/local/lib/python2.5/site-packages/setuptools-0.6c11-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/Trac-0.11b2-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/Genshi-0.4.4-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/Pygments-0.9-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/docutils-0.4-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/Pocoo-0.1.5-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/Jinja-1.2-py2.5-linux-i686.egg', 
+        '/usr/local/lib/python2.5/site-packages/Colubrid-0.10-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/SQLAlchemy-0.4.5-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/simplejson-1.8.1-py2.5-linux-i686.egg', 
+        '/usr/local/lib/python2.5/site-packages/TracAccountManager-0.2dev_r3515-py2.5.egg', 
+        '/usr/local/lib/python2.5/site-packages/TracDiscussion-0.6-py2.5.egg', 
+        '/usr/local/lib/python25.zip', 
+        '/usr/local/lib/python2.5', 
+        '/usr/local/lib/python2.5/plat-linux2', 
+        '/usr/local/lib/python2.5/lib-tk', 
+        '/usr/local/lib/python2.5/lib-dynload', 
+        '/usr/local/lib/python2.5/site-packages', 
+        '/home/cesar/lib/python2.5', 
+        '/usr/local/lib/python2.5/site-packages', 
+        '/usr/local/lib/python2.5/site-packages/nose-0.11.0-py2.5.egg']

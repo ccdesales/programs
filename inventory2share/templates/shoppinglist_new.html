@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link href="{{ STATIC_URL }}css/shopping.css" rel="stylesheet">
+		<title>Shopping List</title>
+	</head>
+	<body>
+		<h3>Creating new Shopping List</h3>
+		<br />
+		<div id="submit_shopping">Submit</div>
+		<div id="left" class="left pane">		
+			{% for category, items in categories.items %}
+			<div class="category" id="L{{ category.id }}">
+				<div  class="header">
+					{{ category.name }}
+				</div>
+				{% for item in items %}
+				<div class="item" id="{{ category.id }}_{{ item.id }}">
+						{{ item.name }}
+				</div>
+				{% endfor %}
+			</div>
+			{% endfor %}
+		</div>
+		<div id="right" class="right pane">
+			{% for category, items in categories.items %}
+			<div class="category" id="R{{ category.id }}">
+				<div  class="header">
+					{{ category.name }}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<script src="{{ STATIC_URL }}js-plugin/jquery-1.7.1.min.js"></script>
+		<script src="{{ STATIC_URL }}js-plugin/jquery.json-2.3.min.js"></script>
+		<script src="{{ STATIC_URL }}js/shopping_list.js"></script>				
+	</body>
+</html>

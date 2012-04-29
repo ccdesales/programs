@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link href="{{ STATIC_URL }}css/inventory.css" rel="stylesheet">
+		<link href="{{ STATIC_URL }}css/inventory_print.css" rel="stylesheet"
+				media="print" title="Printer-Friendly Style">
+		<title>Shopping List</title>
+	</head>
+	<body id="inventario_view">
+		<h2>Shopping List: {{ sl.name }}</h2>
+		<form action="." method="GET" id="inventory_view"> 
+			<input type="submit" value="Toggle units" id="units">
+			<input type="submit" value="Toggle qty" id="qty">
+		</form>
+		<br/>
+		
+		<div id="container" class="table_container">
+			<div class="row" id="header">
+				<span class="cell qty">Qty</span>
+				<span class="cell unit">Unit</span>
+				<span class="cell name">Name</span>
+			</div>
+			
+			{% for category, entries in results.items %}
+				<div  class="row" id="header">
+					<div class="cell left qty">&nbsp;</div>
+					<div class="cell middle unit">&nbsp;</div>
+					<div class="cell right">{{ category.name }}</div>
+				</div>
+				{% for entry in entries %}					
+				<div class="row" id="entry_frame_{{item.id}}">
+					{% if entry.quantity %}
+						<div class="cell qty">{{ entry.exist_quantity }}</div>
+					{% else %}
+						<div class="cell qty">&nbsp;</div>
+					{% endif %}
+					<div class="cell name unit">{{ entry.item.unit }}</div>
+					<div class="cell name">{{ entry.item.name }}</div>
+				</div>
+				{% endfor %}
+			{% endfor %}
+		</div>
+		<script src="{{ STATIC_URL }}js-plugin/jquery-1.7.1.min.js"></script>
+		<script src="{{ STATIC_URL }}js/inventory_code.js"></script>
+	</body>
+</html>

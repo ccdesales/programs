@@ -1,0 +1,31 @@
+.optional {
+	display: none;
+}
+.table_container {
+	display: table;
+}
+.row {
+	display: table-row;
+}
+.table_container #header {
+	color: white;
+	background-color: #0066CC;
+}
+.cell {
+	border: 1px solid #484848;
+	display: table-cell;
+	padding: 4px;
+}
+.cell.left {
+	border-right: None;
+}
+.cell.middle {
+	border-right: None;
+	border-left: None;
+}
+.cell.right {
+	border-left: None;
+}
+#form_canvas .row .item {
+	display: None;
+}

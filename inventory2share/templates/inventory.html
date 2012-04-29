@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link href="{{ STATIC_URL }}css/inventory.css" rel="stylesheet">
+		<title>Inventario</title>
+	</head>		
+	<body>
+		<h2>Inventario</h2>
+		<form action="/inventario/" method="POST" id="inventory">
+			{% csrf_token %}
+			{{ form.errors }}
+						
+			Name: {{ form.name }}
+			
+			<input type="submit" value="Use date" id="date">
+			<input type="submit" value="Save">
+			<input type="submit" name="SubmitTpl" value="Save as Template" >
+			
+			<p />
+			<input type="radio" name="ttype" value="{{ simple_ttype.id }}" id="id_ttype_{{ simple_ttype.id }}" checked="yes">{{ simple_ttype.name }}
+			<input type="radio" name="ttype" value="{{ detailed_ttype.id }}" id="id_ttype_{{ detailed_ttype.id }}">{{ detailed_ttype.name }}
+			<p />
+			<div id="form_canvas" class="table_container">
+				<div class="row">
+					<div class="cell">Exist</div>
+					<div class="cell">Buy</div>
+					<div class="cell">Category</div>
+				</div>
+				{% for category, items in categories.items %}
+					<div  class="row" id="header">
+						<div class="cell left">&nbsp;</div>
+						<div class="cell middle">&nbsp;</div>
+						<div class="cell right">{{ category }}</div>
+					</div>
+					{% for item in items %}
+					<div class="row" id="entry_frame_{{item.id}}">
+						<input type="checkbox" name="items" value="{{item.id}}" id="{{item.id}}" class="item">
+						<div class="cell">							
+							<input type="checkbox" name="isexist_{{item.id}}" value="True" id="isexist_{{item.id}}">
+							<input type="text" name="qty_exist_{{item.id}}" id="qty_exist_{{item.id}}" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<input type="checkbox" name="isreorder_{{item.id}}" value="True" id="isreorder_{{item.id}}">
+							<input type="text" name="qty_reorder_{{item.id}}" id="qty_reorder_{{item.id}}" size="3" maxlength="4" class="optional">
+						</div>
+						<div class="cell">
+							<span id="entry_canvas_{{item.id}}">
+								<label class="optional">({{ item.unit }})</label>
+								{{ item.name }}
+							</span>
+						</div>
+					</div>
+					{% endfor %}
+				{% endfor %}
+			</div>
+			<p>
+				<input type="submit" value="Load last" id="last">
+				<input type="submit" value="Load AJAX" id="ajax">
+				<input type="submit" name="SubmitTpl" value="Save as Template" >
+				<input type="reset" value="Reset!">
+				<input type="submit" value="Save">
+			</p>
+		</FORM>
+		<div id="result">
+			Area
+		</div>
+		<script src="{{ STATIC_URL }}js-plugin/jquery-1.7.1.min.js"></script>
+		<script src="{{ STATIC_URL }}js/inventory_code.js"></script>
+	</body>
+</html>

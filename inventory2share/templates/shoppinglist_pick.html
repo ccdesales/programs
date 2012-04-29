@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<script src="{{ STATIC_URL }}js-plugin/jquery-1.7.1.min.js"></script>
+		<script src="{{ STATIC_URL }}js/inventory_code.js"></script>
+		<style type="text/css">
+		div {
+			display: inline;
+		}
+		</style>
+		<title>Shopping List</title>
+	</head>
+	<body>
+		<h1>View Shopping List</h1>
+		<ul>
+		{% for sl in sls %}
+			<li>			
+				<a href="/shoppinglist/view/{{ sl.id }}">AA {{ sl }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>

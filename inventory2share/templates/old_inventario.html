@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+		<title>Inventario</title>
+	</head>
+	<body>
+		<h1>Inventario</h1>
+		
+		<FORM action="." method="POST">
+			{% csrf_token %}
+			{{ form.non_field_errors }}
+			
+			<div class="fieldWrapper">
+		        {{ form.name.errors }}
+		        <label for="id_name">Inventory Name:</label>
+		        {{ form.name }}
+		        {{ form.items }}
+    		</div>
+    		
+    		
+    		<p>
+				<input type="submit" value="Submit">
+			</p>
+			<p>
+				<input type="submit" name="SubmitTpl" value="Save as Template" >
+			</p>
+		</FORM>
+		
+		<hr />
+		
+		
+		<h1>Inventario</h1>
+		<br>
+		<FORM action="/addinv.do/" method="POST">
+			{% csrf_token %}
+			{% for item in items %}
+			<br>
+				<INPUT type="checkbox" name="items" value="{{item.id}}">
+				<INPUT type="text" name="qty_{{item.id}}" value="3">
+				({{ item.unit }})
+				{{ item }}
+			</br>
+			{% endfor %}
+			<p>
+				<input type="submit" value="Submit">
+			</p>
+		</FORM>
+		
+		<hr/>		
+		<table>{{ form.as_table }}</table>		
+		<hr />
+		
+		<h1>Contact us</h1>
+		<form action="." method="POST">
+			{% csrf_token %}
+			
+				
+				<!--
+				{{ entryform.as_table }}
+				 -->
+				 <!--
+				{% for item in items %}
+				<tr>
+				<td>XXX <INPUT type="checkbox" name="inventory_items" value="{{item.id}}">{{ item }}</td>
+				</tr>
+				{% endfor %}
+				-->	
+			
+			<p>
+				<input type="submit" value="Submit">
+			</p>
+			<p>
+				<input type="submit" name="SubmitTpl" value="Save as Template" >
+			</p>
+		</form>
+		
+	</body>
+</html>
