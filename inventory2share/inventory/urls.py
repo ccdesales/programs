@@ -1,17 +1,17 @@
 from django.conf.urls.defaults import patterns, include, url
 from inventory.inv.models import Item, Unit, Category, Inventory, InventoryEntry, InventoryType
 
-from inventory.views import (
-    home,
+from inventory.views import home
+from inventory.inv.inventory_views import (
     inventory,
     inventory_view,
     inventory_pick,
-    shoppinglist_add,
-    shoppinglist_pick,
-    shoppinglist_view,
 )
 from inventory.inv.shopping_list_views import (
     shoppinglist,
+    shoppinglist_add,
+    shoppinglist_pick,
+    shoppinglist_view,
 )
 
 # Uncomment the next two lines to enable the admin:
