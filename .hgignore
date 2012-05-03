@@ -4,3 +4,7 @@ syntax: glob
 *.class
 syntax: glob
 *.pyc
+syntax: glob
+old_views.py
+syntax: glob
+sample_views.py
