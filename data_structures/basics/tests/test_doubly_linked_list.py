@@ -5,7 +5,7 @@ Created on Jan 16, 2012
 '''
 import nose
 from nose.tools import ok_, eq_ #, nottest
-from ds.basics.doubly_linked_list import DoublyLinkedList
+from data_structures.basics.doubly_linked_list import DoublyLinkedList
 
 def test_insert():
     ll = DoublyLinkedList()

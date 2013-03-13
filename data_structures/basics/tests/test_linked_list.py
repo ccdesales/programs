@@ -1,6 +1,6 @@
 import nose
 from nose.tools import ok_
-from ds.basics.linked_list import LinkedList
+from data_structures.basics.linked_list import LinkedList
 
 #-------------------------------
 # Sample runs of Linked List methods

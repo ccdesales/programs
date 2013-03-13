@@ -4,7 +4,7 @@ Created on Feb 3, 2012
 @author: desales
 '''
 
-from ds.basics.simple_pyqueue import Queue
+from data_structures.basics.simple_pyqueue import Queue
 
 class Tree:
     cargo   = None

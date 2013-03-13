@@ -1,6 +1,6 @@
 import nose
 from nose.tools import ok_, eq_, nottest
-from ds.graphs.bin_tree import (
+from data_structures.graphs.bin_tree import (
     find,
     build_btree,
     in_order,
@@ -270,7 +270,7 @@ def test_select_range_path():
     }
     root = 1
     
-    from ds.graphs.bin_tree import breadth_first_search_filter, range_filter
+    from data_structures.graphs.bin_tree import breadth_first_search_filter, range_filter
     
     kwargs = dict(
          lower = 3,
@@ -301,7 +301,7 @@ def test_select_range_path2():
     }
     root = 1
     
-    from ds.graphs.bin_tree import (
+    from data_structures.graphs.bin_tree import (
         breadth_first_search_filter, 
         range_filter,
     )
@@ -314,7 +314,7 @@ def test_select_range_path2():
     eq_([8,11,9,10,12,13,6,7], breadth_first_search_filter(root, range_filter, kwargs, graph))
 
 def test_list2BST():
-    from ds.graphs.bin_tree import (
+    from data_structures.graphs.bin_tree import (
         breadth_first_search_tree,
         list2BST
     )
@@ -328,7 +328,7 @@ def test_list2BST():
     eq_([10,5,15,3,7,13,16,1,4,6,8], breadth_first_search_tree(tree))
 
 def test_is_line():    
-    from ds.graphs.bin_tree import (
+    from data_structures.graphs.bin_tree import (
         is_line, 
         build_tree,
     )

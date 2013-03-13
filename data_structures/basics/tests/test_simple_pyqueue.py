@@ -1,6 +1,6 @@
 import nose
 from nose.tools import eq_
-from ds.basics.simple_pyqueue import Queue
+from data_structures.basics.simple_pyqueue import Queue
 
 def test_all():
     qq = Queue()
