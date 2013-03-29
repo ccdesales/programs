@@ -1,5 +1,7 @@
 '''
 Created on Mar 13, 2013
+Program that implements aritmetic operation on
+linked list representing integer numbers
 
 @author: desales
 '''
