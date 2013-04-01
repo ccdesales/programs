@@ -1,7 +1,10 @@
 """
 Author: Cesar C. Desales
-Created: 
+Created: 1 April 2013 
 
+You are given a set of n points in a XY plane. Suggest an algorithm to determine 
+if every point is at least separated by every other point by a Manhattan distance 
+of 5 units. Return should be true or false.
 """
 
 import operator
@@ -22,5 +25,13 @@ class DistanceCalculator:
                     
         return abs(xdistance) + abs(ydistance)
     
-    def is_minimal_distance(self, points):
-        pass
+    def is_minimal_distance(self, points, minimal_distance):        
+        ii = 0
+        while ii < len(points):
+            jj = ii + 1
+            while jj < len(points):
+                if self.manhatan_distance(points[ii], points[jj]) < minimal_distance:
+                    return False
+                jj += 1
+            ii += 1
+        return True

@@ -81,7 +81,6 @@ def test_manhatan_distance_from_origin_minus():
     )
     
 def test_manhatan_distance():
-    
     dc = DistanceCalculator()
     eq_( dc.manhatan_distance(
             (1, 2),
@@ -106,6 +105,44 @@ def test_manhatan_distance():
             (2, 3)
         ), 6
     )
+    
+def test_minimal_distance():
+    dc = DistanceCalculator()
+    points = (
+        (-2, -2),
+        (1, 2),
+        (-1, 7),
+        (4, -2),
+    )
+    eq_( dc.is_minimal_distance(points, minimal_distance=5), True )
+
+def test_no_minimal_distance():
+    dc = DistanceCalculator()
+    points = (
+        (1, 0),
+        (1, 2),
+        (-1, 3),
+        (4, -2),
+    )
+    eq_( dc.is_minimal_distance(points, minimal_distance=5), False )
+    
+    points = (
+        (-2, -2),
+        (3, 1),
+        (-1, 3),
+        (4, -2),
+    )
+    eq_( dc.is_minimal_distance(points, minimal_distance=5), False )
+
+
+    points = (
+        (-2, -2),
+        (1, 0),
+        (-1, 3),
+        (3, -2),
+    )
+    eq_( dc.is_minimal_distance(points, minimal_distance=5), False )
+
 
 def run():
     nose.run()
